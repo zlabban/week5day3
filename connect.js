@@ -2,11 +2,11 @@
 import pg from "pg";
 
 // Get the connection string using an environment variable
-const connectionString = process.env.DB_CONNECTION_STRING
+const connectionString = process.env.DB_CONNECTION_STRING;
 
 // Create a new pool instance
 const pool = new pg.Pool({
-    connectionString
+  connectionString,
 });
 
 // Send a query "SELECT * FROM books"
@@ -16,4 +16,3 @@ console.log(rows);
 
 // Close the connection
 await pool.end();
-
