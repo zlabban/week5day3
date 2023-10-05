@@ -10,7 +10,7 @@ const pool = new pg.Pool({
 });
 
 // Send a query "SELECT * FROM books"
-const data = await pool.query("SELECT * FROM books;");
+const data = await pool.query("SELECT * FROM authors;");
 const rows = data.rows;
 console.log(rows);
 

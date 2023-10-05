@@ -10,9 +10,7 @@ const pool = new pg.Pool({
 });
 
 // Send a query "SELECT * FROM books"
-const data = await pool.query(
-  "CREATE TABLE movies (id INTEGER PRIMARY KEY,title TEXT,director TEXT,year INTEGER,length_minutes INTEGER);"
-);
+const data = await pool.query("CREATE TABLE authors ( id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, first_name VARCHAR (255) NOT NULL, last_name VARCHAR (255) NOT NULL)");
 const rows = data.rows;
 console.log(rows);
 
