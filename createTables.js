@@ -10,7 +10,13 @@ const pool = new pg.Pool({
 });
 
 // Send a query "SELECT * FROM books"
-const data = await pool.query("CREATE TABLE authors ( id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, first_name VARCHAR (255) NOT NULL, last_name VARCHAR (255) NOT NULL)");
+// const data = await pool.query("CREATE TABLE authors ( id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, first_name VARCHAR (255) NOT NULL, last_name VARCHAR (255) NOT NULL)");
+// const rows = data.rows;
+// console.log(rows);
+
+const data = await pool.query(
+  "CREATE TABLE books (id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,title VARCHAR(255) NOT NULL,published_date DATE)"
+);
 const rows = data.rows;
 console.log(rows);
 
